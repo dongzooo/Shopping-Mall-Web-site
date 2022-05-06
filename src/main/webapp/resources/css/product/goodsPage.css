@@ -1,0 +1,289 @@
+@charset "UTF-8";
+
+.contents {
+	text-align: center;
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+.goodsImgs{
+	display:inline-block; 
+	vertical-align:middle;
+	margin-right: 30px;
+	margin-left: 20rem;
+	padding-top: 2.5rem;
+}
+
+.goodsImg {
+	width:320px; 
+	height:320px;
+	border-radius: 0.5rem;
+}
+
+.sideImg{
+	width:65px; 
+	height:65px;
+	border-radius: 0.5rem;
+}
+
+.goodsImgSide {
+	list-style : none;
+}
+
+.goodsImgSide li {
+	float : left;
+	margin-left : 10px ;
+	margin-right : 10px;
+}
+
+.goodsName{
+	padding-top: 2rem;
+	margin-bottom: -1rem;
+	text-align : left;
+	font-size: 25px;
+}
+
+.goodsInfo{
+	display:inline-block; 
+	vertical-align:middle;
+	width: 30rem;
+	margin-left: 6rem;	
+}
+
+select, input {
+	margin-left: 7.8rem;
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+.salePrice {
+	margin-left: 9rem;
+}
+
+.orderQnt {
+	width: 5rem;
+	margin-left: 8.5rem;
+}
+
+.price {
+	margin-left: 10rem;
+}
+
+.buyBtn{
+	font-size: 20px;
+	text-align: center;
+	color : white;
+	background-color: rgb(192,57,43);
+	line-height: 2.6em;
+	border-radius: 5px;
+	width: 16rem;
+	border : 0;
+	outline :0;
+	margin-left: -15rem;
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+.cartBtn{
+	font-size: 20px;
+	text-align: center;
+	background-color: white;
+	line-height: 2.6em;	
+	border-radius: 5px;
+	width: 4cm;
+}
+
+.goodsMenu {          
+     height: 40px;
+     width: 680px; 
+     margin-left: 48rem;
+	 display: flex;
+     font-family: 'Gowun Dodum', sans-serif;
+}
+
+.goodsMenu ul li {               
+     list-style : none;       
+     color: rgb(128, 128, 128);               
+ 	 background-color: rgb(128, 128, 128); ; 
+     float: left;                
+     line-height: 30px;          
+     text-align: center;         
+}
+
+.goodsMenu .menuLink {                               
+    text-decoration:none;                
+    color: white;                              
+    display: block;                           
+    width: 170px;                             
+    font-size: 15px;                                          
+}
+
+.goodsMenu .menuLink:hover {           
+    color:  darkgray;                  
+    background-color: #4d4d4d;   
+}
+
+
+.reviewName{
+	text-align : center;
+	font-size: 25px;
+	font-weight: bold;
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+.title-star {
+	display: flex;
+	justify-content: center;
+}
+
+.review{
+	width: 50%; 
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.make_star{
+	padding: 0;
+}
+ 
+.review .reviewTitle {
+	width: 100%;
+	text-align : left;
+	height: 30px;
+}     
+
+.review .scope{
+	width: 130px;
+	height: 20px;
+}
+
+.review .reviewContent{
+	margin-top: 15px;
+	text-align : left;
+	width: 100%;
+	height: 100px;
+	padding: 0;
+}   
+
+.btnWrap{
+	text-align: right;
+}
+
+.reviewList{
+	height: 100px;
+	width: 680px;
+	display:inline-block; 
+	vertical-align:middle;
+}
+
+.reviewL{
+	float : left;
+	margin-right: 30px;
+}
+
+.reviewL .reviewImg{
+	width:100px; 
+	height:110px;
+}
+
+.reviewR{
+	text-align: right;
+	
+}
+
+.reviewDes{
+	float : left;
+	line-height: 1.5;
+}
+
+.reviewR .scope{
+	width: 130px;
+	height: 20px;
+}
+
+.reviewR .modifyBtn{
+	color : white;
+	font-weight :bold;
+	font-size: 10px;
+	text-align: center;
+	background-color: gray;
+	line-height: 1.6em;	
+	border-radius: 5px;
+	width: 2cm;
+	border : 0;
+	outline :0;
+}
+
+.reviewR .deleteBtn{
+	color : white;
+	font-weight :bold;
+	font-size: 10px;
+	text-align: center;
+	background-color: rgb(192,57,43);
+	line-height: 1.6em;	
+	border-radius: 5px;
+	width: 2cm;
+	border : 0;
+	outline :0;
+}
+
+
+
+
+.qna {
+	  margin: auto; 
+	  text-align: center; 
+	  border-collapse: collapse; 
+	  width : 680px;
+	  border-top :1px  solid gray; 
+}
+
+.gnaHeader{
+	border-bottom: 2px  solid gray; 
+	 height:40px;   
+	 background-color: lightgray;
+	 font-weight:  bold;
+}
+
+.qna tr{
+	border-bottom: 0.01px  solid #999999;
+	height:40px;
+}
+
+.qnaBottom{
+	display:inline-block; 
+	vertical-align:middle;
+}
+
+.paging{
+	text-align: center;
+}
+
+.paging a{
+	font-size : 15px;
+	text-align : center;
+	border-radius: 5px;
+	width: 5px;
+	margin-right: 2px;
+	margin-left: 2px;
+}
+
+.qnaBtn{
+	color : white;
+	font-size: 0.9rem;
+	text-align: center;
+	background-color: gray;
+	line-height: 2.0em;	
+	border-radius: 5px;
+	width: 2cm;
+	border : 0;
+	outline :0;
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+
+dl{
+   display: flex;
+}
+dd{
+    margin-left:10px;
+    text-align: center;
+	width: 10rem;
+ }

@@ -1,0 +1,74 @@
+body {
+	height: 100vh;
+	background: url("../../images/menu_Background.png") no-repeat;
+	background-size: cover;
+}
+
+main {
+ 	font-size: 1rem;
+	font-family: 'Gowun Dodum', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15rem;
+    opacity: 85%;
+}
+
+.hr {
+	display: flex;
+	justify-content: center;
+}
+
+.admin-menu {
+    color: #fff;
+	width: 50rem;
+	display: flex;
+	justify-content: center;
+}
+
+.admin-menu .title {
+    font-size: 2.5rem;
+    color: #fff;
+	
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5rem;
+    margin: 0 1rem;
+    
+    width: 18rem;
+   	background-color: #282828;
+   	border-radius: 2rem;
+}
+
+.admin-menu .menu {
+	width: 27rem;
+    padding: 1rem;
+}
+
+.menu-group1 {
+	display: flex;
+	justify-content: space-around;
+}
+
+.menu-group2 {
+	display: flex;
+	justify-content: space-around;
+
+	margin-top: 1rem; 
+	margin-bottom: 0.5rem;
+}
+
+.btn-box-content {
+    font-size: 1rem;
+}
+
+.menu_align {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#icon {
+	font-size: 100px;
+}

@@ -1,0 +1,260 @@
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 5rem;
+  background-color: #333;
+  padding: 0 2rem;
+  color: #eee;
+}
+
+.top-nav .logo-box {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.top-nav .logo-box .logo-img{
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  height: 100%;
+}
+
+.top-nav .logo-box .logo-title h1{
+  font-size: 2rem;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.top-nav .logo-box .logo-img img{
+  border-radius: 50%;
+  background-color: #eee;
+  height: 50%;
+}
+
+.top-nav .btn-group {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.top-nav .btn-group i {
+  padding: 0 2rem;
+  font-size: 2rem;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  height: calc(100vh - 5rem);
+}
+
+main .admin-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+}
+
+main .admin-menu .title {
+  text-align: center;
+  border-radius: 1rem;
+  width: 50%;
+  background-color: rgba(51, 51, 51, 0.15);
+  margin-bottom: 2rem;
+}
+
+main .admin-menu .title h2{
+  font-size: 3rem;
+}
+
+main .admin-menu .btn-group{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+  padding: 0 6rem;
+}
+
+main .admin-menu .btn-group .btn-box {
+  width: 50%;
+  margin-bottom: 2rem;
+}
+
+main .admin-menu .btn-group .btn-box i {
+  font-size: 4rem;
+}
+
+main .admin-menu .btn-group .btn-box h2 {
+  font-size: 2rem;
+}
+
+.divider {
+  width: 0.2rem;
+  height: calc(100vh - 12rem);
+  background-color: #333;
+}
+
+main .content-board {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 70%;
+  padding: 0 5rem;
+}
+
+main .content-board .title {
+  text-align: center;
+}
+
+main .content-board .title h2{
+  font-size: 5rem;
+}
+
+main .content-board .board_list_wrap {
+  padding: 50px;
+}
+
+main .content-board .board_list_head,
+main .content-board .board_list_body .item {
+  padding: 10px 0;
+  font-size: 0;
+}
+
+main .content-board .board_list_head {
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+}
+
+main .content-board .board_list_body .item {
+  border-bottom: 1px solid #ccc;
+}
+
+main .content-board .board_list_head > div,
+main .content-board .board_list_body .item > div {
+  display: inline-block;
+  text-align: center;
+
+}
+
+main .content-board .board_list_head > div {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+main .content-board .board_list_body .item > div {
+  font-size: 25px;
+}
+
+main .content-board .board_list .ch {
+  width: 5%;
+}
+
+main .content-board .board_list .num {
+  width: 10%;
+}
+
+main .content-board .board_list .tit {
+  width: 45%;
+}
+
+main .content-board .board_list .tit a{
+  font-size: 30px;
+}
+
+main .content-board .board_list_body div.tit {
+  text-align: left;
+}
+
+main .content-board .board_list_body div.tit a:hover {
+  text-decoration: underline;
+}
+
+main .content-board .board_list .writer {
+  width: 20%;
+}
+
+main .content-board .board_list .date {
+  width: 20%;
+}
+
+
+/* paging */
+main .content-board .paging {
+  margin-top: 10px;
+  text-align: center;
+}
+
+main .content-board .paging a {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 30px;
+}
+
+main .content-board .paging i {
+  font-size: 30px;
+}
+
+main .content-board .paging a.first {
+  margin: 0 5px;
+}
+
+main .content-board .paging a.prev {
+  margin: 0 5px;
+}
+
+main .content-board .paging a.next {
+  margin: 0 5px;
+}
+
+main .content-board .paging a.last {
+  margin: 0 5px;
+}
+
+main .content-board .paging a.num {
+  margin: 0 5px;
+}
+
+main .content-board .paging a.num.on {
+  color: rgb(243, 11, 11);
+}
+
+main .content-board .paging a.num:hover {
+  text-decoration: underline;
+}
+
+main .content-board .board_list_btn {
+  margin-top: 10px;
+  text-align: center;
+}
+
+main .content-board .board_list_btn a {
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  font-size: 25px;
+  border-radius: 10px;
+  line-height: 40px
+}
+
+main .content-board .board_list_btn a.write {
+  margin-right: 10px;
+  background-color: #333;
+  color: #eee;
+  
+}
+
+main .content-board .board_list_btn a.modify {
+  margin-right: 10px;
+  background-color: rgb(3, 1, 104);
+  color: #eee;
+}
+
+main .content-board .board_list_btn a.cancel {
+  background-color: rgb(212, 10, 10);
+  color: #eee;
+}
+
+

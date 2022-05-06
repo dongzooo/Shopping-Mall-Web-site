@@ -1,0 +1,126 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+main .main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: calc(100vh - 5rem);
+}
+
+main .mypage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30rem;
+    margin-top: 3.5rem;
+    margin-right: -1.2rem;
+   	margin-left: 7rem;
+}
+
+main .mypage .title {
+    text-align: center;
+    border-radius: 1rem;
+    width: 50%;
+    margin-bottom: 2rem;
+}
+
+main .mypage .title h2{
+    font-size: 2.5rem;
+   	color: #5e5e5e;
+}
+
+main .mypage .btn-group{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+    padding: 0 6rem;
+}
+
+main .mypage .btn-group .btn-box {
+    width: 50%;
+    margin-bottom: 2rem;
+}
+
+main .mypage .btn-group .btn-box h2 {
+    font-size: 2rem;
+}
+
+button {
+	width: 10.7rem;
+	height: 2.3rem;
+	border-radius: 0.3rem;
+	border: none;
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+select, input {
+	width: 22rem;
+	height: 2.1rem;
+}
+
+textarea {
+	width: 22rem;
+}
+
+.menu-warp {
+	margin-bottom: 1rem;
+	width: 100rem;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.my-menu {
+	display: flex;
+	flex-direction: column;
+}
+
+.divider {
+    width: 0.2rem;
+    height: calc(100vh - 12rem);
+    background-color: #333;
+    margin-right: 1.13rem;
+    margin-left: -0.1rem;
+}
+
+.thumb-nail {
+	margin-top: 0.55rem;
+	margin-bottom: 0.5rem;
+	width: 22rem;
+	text-align: left;
+}
+
+.input_row {
+	margin-bottom: 0.5rem;
+}
+
+.btn-wrap {
+	width: 22rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.sbt {
+	color: white;
+    background-color: #c0392b;
+}
+
+#tagArea {
+	display: flex;
+	align-items: center;
+}
+
+#thumbFileName {
+	width: 1rem;
+}
+
+#icon {
+	font-size: 70px;
+	color: #5e5e5e;
+}

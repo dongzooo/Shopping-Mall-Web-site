@@ -1,0 +1,209 @@
+main {
+    display: flex;
+    justify-content: center;
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+main .main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: calc(100vh - 5rem);
+    width: 80%; 
+}
+
+main .admin-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30rem;
+    margin-right: -1.2rem;
+    margin-left: -0.75rem;
+}
+
+main .admin-menu .title {
+    text-align: center;
+    border-radius: 1rem;
+    width: 50%;
+    margin-bottom: 2rem;
+}
+
+main .admin-menu .title h2{
+    font-size: 3rem;
+	color: #5e5e5e;
+}
+
+main .admin-menu .btn-group{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+    padding: 0 6rem;
+}
+
+main .admin-menu .btn-group .btn-box {
+    width: 50%;
+    margin-bottom: 2rem;
+}
+
+main .admin-menu .btn-group .btn-box h2 {
+    font-size: 2rem;
+}
+
+.divider {
+    width: 0.2rem;
+    height: calc(100vh - 12rem);
+    background-color: #333;
+    margin-right: 1.13rem;
+    margin-left: -0.1rem;
+}
+
+main .content-board {
+	margin-left: 0.7rem;
+    padding: 0 6rem;
+    width: 55%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+main .content-board .title {
+    text-align: center;
+    border-radius: 1rem;
+    margin-top: 8rem;
+    margin-bottom: 1rem;
+}
+
+main .content-board .title h2{
+    font-size: 3rem;
+	color: #5e5e5e;
+}
+
+.menu-warp {
+	margin-bottom: 1rem;
+	width: 100rem;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.my-menu {
+	display: flex;
+	flex-direction: column;
+}
+
+table{
+	margin-top: 1rem;
+    text-align: left;
+}
+
+td{
+    font-size: 1.2rem;
+}
+
+tr span {
+	font-size: 1.2rem;
+}
+
+
+table a {
+    font-size: 1.2rem;
+    text-decoration: underline;
+}
+
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    accent-color: #5e5e5e;
+}
+
+.pagination .page-link{
+    color: black;
+    font-size: 1.3rem;
+}
+
+.page-link:active{
+    background-color: #404040;
+}
+
+.delete-btn{
+    padding: 0 30px;
+    border: none;
+    border-radius: 7px;
+    background-color: #c0392b;
+    color: #fff;
+    font-size: 25px;
+    margin-top: 0.1rem;
+}
+
+.table-secondary td {
+	font-size: 1.25rem;
+}
+
+.memList {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.no {
+	text-align: center;
+	width: 1.2rem;
+}
+
+.id {
+	text-align: center;
+	width: 5.5rem;
+}
+
+.point {
+	text-align: center;
+	width: 4.5rem;
+}
+
+.date {
+	text-align: center;
+	width: 7rem;
+}
+
+tr {
+	width: 40rem;
+	display: flex;
+	justify-content: space-around;
+}
+
+thead tr {
+	background-color: #5e5e5e;
+	margin-bottom: 0.5rem;
+	padding-top: 0.5rem;
+	height: 3rem;
+	color: white;
+}
+
+tbody tr {
+	margin-top: 1rem;
+}
+
+tbody {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-around;
+	
+}
+
+ul {
+	width: 10rem;
+	display: flex;
+	justify-content: space-evenly;
+	list-style: none;
+	margin-top: 1.2rem;
+	margin-bottom: 1.2rem;
+}
+
+#icon {
+	font-size: 70px;
+	color: #5e5e5e;
+}

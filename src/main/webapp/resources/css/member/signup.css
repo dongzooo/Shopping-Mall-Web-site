@@ -1,0 +1,114 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	background: url("../../images/login.png") no-repeat;
+	background-size: cover;
+}
+
+.signup-wrap{
+	margin-top: 11rem;
+
+	display: flex;
+	justify-content: center;
+	
+	font-family: 'Gowun Dodum', sans-serif;
+	opacity: 80%;
+}
+
+form {
+	display: flex;
+	width: 23rem;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	color: #fff;
+}
+
+h2{
+	width: 100%;
+	text-align: center;
+	font-size: 27px;
+	font-weight: bold;
+}
+
+.id-text, .pw-text, .pw-check-text, .name-text, .birth-text, .email-text, .phone-text, .addr-text {
+	font-size: 0.9rem;
+	margin-bottom: 0.1rem;
+	margin-left: 0.1rem;
+} 
+
+.id-wrap, .email-wrap, .phone-container, .addr-wrap {
+	margin-left: 0.3rem;
+	margin-top: 0.8rem;
+}
+
+.email, .addr, .certify {
+	width : 22.4rem;
+}
+
+.btn-wrap {
+	margin-left: 0.3rem;
+	margin-top: 1.45rem;
+}
+
+.pw-wrap-container, .name-birth-container {
+	display: flex;
+	width: 23rem;	
+	margin-top: 0.8rem;
+	justify-content: space-around;
+}
+
+input {
+	width: 11rem;
+	height: 2.1rem;
+	border-radius: 0.5rem;
+	padding-left: 0.2rem;
+	font-family: 'Gowun Dodum', sans-serif;
+	font-size: 0.9rem;
+}
+
+button{
+	width: 11rem;
+	height: 2.1rem;
+	border-radius: 0.5rem;
+	font-family: 'Gowun Dodum', sans-serif;
+	font-size: 0.8rem;
+}
+
+.idCheck, .phoneCheck {
+	font-size: 0.85rem;
+}
+
+.sbt, #cancel {
+	font-size: 0.9rem;
+	height: 2.19rem;
+}
+
+.idCheck, .phoneCheck, .sbt {
+	background-color: #c0392b;
+	border: none;
+	color: #fff;
+}
+
+.idCheck, .phoneCheck, #cancel {
+	margin-left: 0.2rem;
+}
+
+#cancel {
+	background-color: #fff;
+	color: black;
+}
+
+.item{
+	margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

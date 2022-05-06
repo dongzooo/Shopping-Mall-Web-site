@@ -1,0 +1,48 @@
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 5rem;
+  background-color: #282828;
+  padding: 0 2rem;
+  color: #eee;
+  opacity: 80%;
+}
+
+.top-nav .logo-box {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  cursor: pointer;
+}
+
+.top-nav .logo-box .logo-img{
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  height: 100%;
+}
+
+.top-nav .logo-box .logo-title h1{
+  font-size: 2rem;
+  font-family: 'Sunflower', sans-serif;
+  font-weight: 400;
+}
+
+.top-nav .logo-box .logo-img img{
+  border-radius: 50%;
+  background-color: #eee;
+  height: 50%;
+}
+
+.top-nav .btn-group {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.top-nav .btn-group i {
+  padding: 0 2rem;
+  font-size: 2rem;
+}

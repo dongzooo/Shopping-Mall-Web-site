@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.member.mapper.MemberMapper">
+
+	<insert id="addMember">
+		insert into MEMBER(MEM_ID, MEM_PW, MEM_NAME, MEM_TEL, MEM_ADDR, MEM_BIRTH_DATE, MEM_EMAIL) 
+		values(#{id, jdbcType=VARCHAR}, #{pw}, #{name}, #{tel}, #{addr}, #{birthDate, jdbcType=DATE}, #{email})
+	</insert>
+	<insert id="addAuth">
+		insert into memberSec_auth values(#{id, jdbcType=VARCHAR}, #{auth})
+	</insert>
+
+	<select id="idCount" resultType="int">
+		select count(*) from MEMBER where MEM_ID=#{id}
+	</select>
+
+	<!-- MemberVO안에 List<AuthVO> authList때문에 resultMap 정의함  -->
+	<resultMap type="com.member.domain.MemberVO" id="memberMap">
+		<id property="id" column="mem_id" />
+		<result property="id" column="mem_id"/>
+		<result property="pw" column="mem_pw"/>
+		<result property="name" column="mem_name"/>
+		<result property="tel" column="mem_tel"/>
+		<result property="addr" column="mem_addr"/>
+		<result property="email" column="mem_email"/>
+		<result property="grade" column="mem_grade"/>
+		<result property="point" column="mem_point"/>
+		<result property="joinDate" column="mem_join_date"/>
+		<result property="birthDate" column="mem_birth_date"/>
+		<collection property="authList" resultMap="authMap"></collection>
+	</resultMap>
+	
+	<resultMap type="com.member.domain.AuthVO" id="authMap">
+		<result property="id" column="mem_id" />
+		<result property="auth" column="auth" />
+	</resultMap>
+	
+	<select id="getMember" resultMap="memberMap">
+		select m.mem_id, mem_pw, mem_name, mem_tel, mem_addr, mem_email, mem_grade, mem_birth_date, mem_join_date, auth 
+		from member m left outer join member_auth a on m.mem_id = a.mem_id 
+		where m.mem_id = #{id} 
+	</select>
+	
+	<select id="getMemberList" resultMap="memberMap">
+		select m.mem_id, mem_pw, mem_name, mem_tel, mem_addr, mem_email, mem_birth_date, mem_join_date, auth 
+		from member m left outer join member_auth a on m.mem_id = a.mem_id 
+		where a.auth='ROLE_MEMBER' OR a.auth='ROLE_SALESCLERK' ORDER BY a.auth desc
+	</select>
+
+	<update id="updateMember">
+		update member set mem_pw=#{pw}, mem_email=#{email}, mem_tel=#{tel}, mem_addr=#{addr}
+		where mem_id=#{id}	
+	</update>
+	
+	<update id="updateMemberAdmin">
+		update member set mem_point=#{point}, mem_grade=#{grade}
+		where mem_id=#{id}
+	</update>
+
+	<delete id="deleteMember">
+		delete from member where mem_id=#{id}
+	</delete>
+
+	<select id="getPoint" resultType="int">
+		select mem_point from member where mem_id=#{id}
+	</select>
+
+	<update id="modiAuth">
+		update member_auth set auth=#{seller} where mem_id=#{id}
+	</update>
+	
+	<insert id="saveCoupon">
+		insert into mem_coupon(coupon_num, mem_id) values(#{coupon_num}, #{mem_id})
+	</insert>
+
+
+</mapper>

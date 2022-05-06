@@ -1,0 +1,209 @@
+* {
+	user-select: none;
+	
+   -ms-user-select: none; 
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+}
+
+#main {
+    border-bottom: 1px solid #f7f7f7;
+}
+
+#content {
+    min-width: 1050px;
+    padding-bottom: 60px;
+}
+
+#header, #container, #content {
+    position: relative;
+}
+
+element.style {
+    background-position: 50% -116.667px;
+}
+
+.banner {
+    height: 30rem;
+    background: #fff  url(https://www.skc.kr/asset/kor/images/creat/eco_img01.jpg) no-repeat;
+    background-size: cover;
+}
+
+div, th, td, li, dt, dd, p {
+    word-break: break-all;
+}
+
+.intro {
+    width: 100%;
+    color: #000;
+}
+
+.introduce {
+    width: 100%;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+
+body, input, select, textarea, button {
+    line-height: 1;
+    letter-spacing: -.05em;
+    color: #4c4c4c;
+    font-size: 12px;
+    max-width: 100%;
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+.info_box {
+    width: 70rem;
+    margin: 0 auto;
+  	margin-top: 5rem;
+}
+
+.intro .tit_intro {
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+h3 {
+	font-family: 'Sunflower', sans-serif;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    opacity: 80%;
+}
+
+.intro_text {
+	font-family: 'Gowun Dodum', sans-serif;
+    padding: 0.1rem 0 3rem 0;
+    font-size: 1.2rem;
+    font-weight: 200;
+    line-height: 2.3rem;
+    text-align: justify;
+    margin-bottom: 6rem;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.banner2 {
+    height: 30rem;
+    background: #fff url(https://static.wixstatic.com/media/58100c_1266eb1a29f74f7faa29c434a53e8ba1~mv2.png/v1/fill/w_1504,h_1004,al_c,q_90/58100c_1266eb1a29f74f7faa29c434a53e8ba1~mv2.webp) no-repeat;
+    background-size: cover;
+}
+
+.more_menu .img_thumb {
+    display: block;
+    height: 12rem;
+    width: 20rem;
+    margin-top: 0.7rem;
+}
+
+img {
+    border: 0;
+    aspect-ratio: auto 364 / 200;
+}
+
+img, video, canvas {
+    max-width: 100%;
+}
+
+li {
+	display: flex;
+	align-items: center;
+    text-align: -webkit-match-parent;
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    margin-top: -3.5rem;
+}
+
+.more_menu .menu_info {
+    display: table-cell;
+    width: 670px;
+    padding-left: 50px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.more_menu .tit_menu {
+    font-size: 1.5rem;
+    color: #512772;
+   	font-family: 'Sunflower', sans-serif;
+   	font-weight: 400;
+   	margin-bottom: -0.3rem;
+}
+
+.more_menu .list_menu li:first-child {
+    margin-top: 0;
+}
+
+.more_menu .list_menu li {
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.more_menu .text_menu_info {
+    padding-top: 15px;
+    border-top: 1px solid #dddfe1;
+    line-height: 2rem;
+    font-size: 1.1rem;
+    font-weight: 200;
+    color: #514859;
+    text-align: justify;
+   	font-family: 'Gowun Dodum', sans-serif;
+}
+
+
+
+
+
+
+
+
+

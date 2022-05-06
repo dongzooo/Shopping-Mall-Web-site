@@ -1,0 +1,90 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	background: url("../../images/login.png") no-repeat;
+	background-size: cover;
+}
+
+
+.modify{
+	margin-top: 11rem;
+
+	display: flex;
+	justify-content: center;
+	
+	font-family: 'Gowun Dodum', sans-serif;
+	opacity: 80%;
+}
+
+#inputForm {
+	display: flex;
+	height: 30rem;
+	width: 25rem;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	color: #fff;
+}
+
+h2{
+	width: 100%;
+	text-align: center;
+	font-size: 27px;
+	font-weight: bold;
+}
+
+.pw-wrap-container, .name-birth-container {
+	display: flex;
+	width:90%;
+	justify-content: space-evenly;
+}
+
+#pw,  #pwCheck, #name, #birth {
+	width: 10.7rem;
+	height: 1.8rem;
+	border-radius: 0.5rem;
+}
+
+#id, #email, #tel, #addr {
+	width: 21.8rem;
+	height: 1.8rem;
+	border-radius: 0.5rem;
+}
+
+button{
+	width: 10.7rem;
+	height: 2rem;
+	border-radius: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+.idCheck, .phoneCheck, .sbt {
+	background-color: #c0392b;
+	border: none;
+	color: #fff;
+}
+
+#cancel{
+	background-color: #fff;
+	color: black;
+}
+
+.item{
+	margin-bottom: 10px;
+}
+
+.item-bottom {
+	width:90%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

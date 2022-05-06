@@ -1,0 +1,153 @@
+main {
+    display: flex;
+    justify-content: center;
+    font-family: 'Gowun Dodum', sans-serif;
+}
+
+main .main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: calc(100vh - 5rem);
+}
+
+main .mypage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30rem;
+    margin-right: 1rem;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title h2{
+    font-size: 3rem;
+   	color: #5e5e5e;
+}
+
+main .mypage .btn-group{
+    display: flex;
+    flex-wrap: wrap;
+    width: 30rem;
+    text-align: center;
+    padding: 0 6rem;
+}
+
+main .mypage .btn-group .btn-box {
+    width: 50%;
+    margin-bottom: 2rem;
+}
+
+main .mypage .btn-group .btn-box h2 {
+    font-size: 2rem;
+   	color: #5e5e5e;
+}
+
+.divider {
+    width: 0.2rem;
+    height: calc(100vh - 12rem);
+    background-color: #333;
+}
+
+main .content-board {
+    padding: 0 6rem;
+    width: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+main .content-board .title h2{
+    font-size: 3rem;
+}
+
+td{
+    font-size: 1.2rem;
+}
+
+tr {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+button {
+   	font-family: 'Gowun Dodum', sans-serif;
+}
+
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    accent-color: #5e5e5e;
+}
+
+table button{
+    padding: 0.3rem 0.7rem;
+    font-size: 1.1rem;
+    background-color: #5e5e5e;
+    color: #fff;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.pagination .page-link{
+    color: black;
+    font-size: 1.3rem;
+}
+
+.page-link:active{
+    background-color: #404040;
+}
+
+.order-info{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+}
+
+.buy-btn{
+    padding: 0.3rem 0.7rem;
+    font-size: 1.1rem;
+    background-color: #c0392b;
+    color: #fff;
+    border-radius: 7px;
+    border: none;
+}
+
+.pagination-mapper {
+	display: flex;
+	justify-content: center;
+}
+
+.pagination {
+	width: 10rem;
+	display: flex;
+	justify-content: space-evenly;
+	list-style: none;
+	margin-left: 3.5rem;
+	margin-top: 0.3rem;
+	margin-bottom: 1.2rem;
+}
+
+.menu-warp {
+	margin-bottom: 1rem;
+	width: 100rem;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.my-menu {
+	display: flex;
+	flex-direction: column;
+}
+
+#icon {
+	font-size: 70px;
+	color: #5e5e5e;
+}

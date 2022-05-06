@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.mapper.AdminBoardNoticeMapper">
+
+	<select id="getList" resultType="adminBoardVO">
+		<![CDATA[
+			select * from SIMPLE_BOARD where board_no>0 order by 1
+		]]>
+	</select>
+	<!-- 
+	<select id="getListWithPaging" resultType="boardVO">
+		<![CDATA[
+			select bno, title, content, writer, regdate, updatedate from
+	    		(select rownum r, bno, title, content, writer, regdate, updatedate from 
+	        		(select /*+ INDEX_DESC(board pk_board)*/ 
+	        		 bno, title, content, writer, regdate, updatedate 
+	        		 from board) 
+    			where rownum <= (#{pageNum} * #{listQty} )) 
+			where r > (#{pageNum} - 1) * #{listQty}
+		]]>
+	</select> 	 -->
+	
+	<sql id="criteria">
+		<trim prefix="where" prefixOverrides="or">
+ 			<foreach item="type" collection="typeArr">
+ 				<trim prefix="or">
+					<choose>
+						<when test="type == 'T'.toString()">
+							title like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							content like '%'||#{keyword}||'%'
+						</when>	
+						<when test="type == 'W'.toString()">
+							writer like '%'||#{keyword}||'%'
+						</when>
+					</choose>					
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+
+	
+	<select id="getListWithPaging" resultType="adminBoardVO">
+		<![CDATA[
+			select board_no, board_title, board_content, category, create_date, update_date from
+	    		(select rownum r, board_no, board_title, board_content, category, create_date, update_date from 
+	        		(select /*+ INDEX_DESC(SIMPLE_BOARD pk_simple_board)*/ 
+	        		board_no, board_title, board_content, category, create_date, update_date
+	        		 from SIMPLE_BOARD
+	    ]]>
+    	
+    	<include refid="criteria"></include>
+    	
+	    <![CDATA[ 
+	        		 ) 
+    			where rownum <= (#{pageNum} * #{listQty} )) 
+			where r > (#{pageNum} - 1) * #{listQty}
+		]]>
+	</select>
+	
+	
+	<!-- 전체 글의 개수 가져오기 : 전체 일때랑 검색했을때 두방법 모두 사용  -->
+	<select id="getTotalCount" resultType="int">
+		select count(*) from SIMPLE_BOARD 
+		<include refid="criteria"></include>
+	</select>
+	
+
+	<!--  insert하고 bno 따로 사용할일 없으면 아래 insert 사용  -->
+	<insert id="insert">
+		insert into board (board_no, board_title, board_content, category) 
+		values(test_seq.nextval, #{board_title}, #{board_content}, #{category})
+	</insert>
+	<!-- insert 쿼리 실행하고 bno 값이 바로 필요하면 아래꺼 사용 -->
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="board_no" order="BEFORE" resultType="long">
+			select test_seq.nextval from dual
+		</selectKey>
+		insert into SIMPLE_BOARD (board_no, board_title, board_content, category) 
+		values(#{board_no}, #{board_title}, #{board_content}, #{category})
+	</insert>
+	
+	<!-- 글 한개 가져오기  -->
+	<select id="read" resultType="adminBoardVO">
+		select * from SIMPLE_BOARD where board_no=#{board_no}
+	</select>
+	
+	<!-- 글 삭제 -->
+	<delete id="delete">
+		delete from SIMPLE_BOARD where board_no = #{board_no}
+	</delete>
+
+	<!-- 글 수정 -->
+	<update id="update">
+	update SIMPLE_BOARD set board_title=#{board_title}, board_content=#{board_content}, category=#{category}, update_date= sysdate where board_no=#{board_no}
+	
+	</update>
+
+	<!-- 조회  -->
+	
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

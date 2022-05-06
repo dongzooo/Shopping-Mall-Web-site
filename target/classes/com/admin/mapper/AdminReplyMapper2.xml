@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.mapper.AdminReplyMapper2">
+
+<insert id="insert">
+		<selectKey keyProperty="reply_no" order="BEFORE" resultType="long">
+			select test_reply_seq.nextval from dual
+		</selectKey>
+		insert into reply (reply_no, board_no, reply, replyer, grp, step, lev) 
+		values(#{reply_no}, #{board_no}, #{reply}, #{replyer}, #{reply_no}, #{step}, #{lev})
+	</insert>
+	
+	<!-- 댓글의 답글 처리 -->
+	<!-- 기존 답글들 step을 1씩 올려주기(답글들의 순서 정렬을 위해) -->
+	<update id="updateStep">
+		update reply set step=step+1 
+		where grp=#{grp} and step > #{step} 
+	</update>
+	<!-- 답글 추가  -->
+	<insert id="addReReply">
+		<selectKey keyProperty="reply_no" order="BEFORE" resultType="long">
+			select test_reply_seq.nextval from dual
+		</selectKey>
+		insert into reply (reply_no, board_no, reply, replyer, grp, step, lev) 
+		values(#{reply_no}, #{board_no}, #{reply}, #{replyer}, #{grp}, #{step}, #{lev})
+	</insert>
+
+	<select id="read" resultType="adminReplyVO2">
+		select * from reply where reply_no=#{reply_no}
+	</select>
+
+	
+	<update id="update">
+		update reply set reply=#{reply}, replyDate=sysdate 
+		where reply_no = #{reply_no}
+	</update>
+	
+
+	<delete id="delete">
+		delete from reply where reply_no=#{reply_no}
+	</delete>
+	
+	<delete id="deleteReply">
+		delete from reply where board_no=#{board_no}
+	</delete>
+
+	<select id="getList" resultType="adminReplyVO2">
+		select * from reply where board_no=#{board_no} order by reply_no desc
+	</select>
+	
+	<select id="getListWithPaging" resultType="adminReplyVO2">
+	<![CDATA[
+		select reply_no, board_no, reply, replyer, replyDate, grp, step, lev 
+		from 
+			(select rownum r, reply_no, board_no, reply, replyer, replyDate, grp, step, lev 
+			from
+				( select reply_no, board_no, reply, replyer, replyDate, grp, step, lev 
+				from reply
+				where board_no = #{board_no}
+				order by grp desc, step asc) 
+			where rownum <= #{cri.pageNum} * #{cri.listQty} 
+			order by grp desc, step asc
+			)
+		where r > (#{cri.pageNum} -1) * #{cri.listQty}
+	]]>
+	</select>
+	
+	<!-- #1. 전체 댓글의 개수 가져오기 -->
+	<select id="getRepCount" resultType="int">
+		select count(*) from reply where board_no=#{board_no}
+	</select>
+	
+
+
+
+
+
+</mapper>

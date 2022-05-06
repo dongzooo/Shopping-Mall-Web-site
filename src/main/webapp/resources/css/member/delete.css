@@ -1,0 +1,104 @@
+@charset "utf8";
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+	height: 100vh;
+	background: url("../../images/login.png") no-repeat;
+	background-size: cover;
+}
+
+/* ------------- Login ------------- */
+
+form {
+	display: flex;
+	padding: 1.5rem 1.3rem 2.7rem 1.3rem;
+
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+
+	font-family: 'Gowun Dodum', sans-serif;
+}
+
+.delete-wrap {
+	display: flex;
+	justify-content: center;
+
+	opacity: 70%;
+	margin-top: 19rem;
+}
+
+.delete-wrap h1{
+  color: white;
+  text-align: center;
+  margin-bottom: -0.5rem;
+}
+
+.pw-wrap{
+  position: relative;
+  width: 17rem;
+  height: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.deleteBtn-wrap, .cancelBtn-wrap {
+  width: 17rem; 
+  height: 2.1rem;
+  margin-top: 0.5rem;
+}
+
+#pw-input {
+	display: block;
+	font-size: 0.9rem;
+	width: 100%;
+	height: 2.1rem;
+	padding: 2px 5px 0px 8px;
+	margin-bottom: 5px;
+	color: #444444;
+	border: none;
+	border-radius: 0.5rem;
+	outline: 0;
+	font-family: 'Gowun Dodum', sans-serif;
+}
+
+#deleteBtn {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #fff;
+  background-color: red;
+  border: none;
+  border-radius: 0.5rem;
+  outline: 0;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#cancelBtn {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  outline: 0;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+
+body {
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

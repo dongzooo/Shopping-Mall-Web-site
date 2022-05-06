@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.mapper.AdminMapper">
+	
+	<insert id="addQna">
+		insert into QNA_CATEGORY(QNA_CATE_NAME) values(#{cateName})
+	</insert>
+	
+	<insert id="addTempQna">
+		insert into TEMP_CATEGORY(CATEGORY_TYPE, CATEGORY_NAME) values( 'QNA' ,#{cateName})
+	</insert>
+	
+	<insert id="addFaq">
+		insert into FAQ_CATEGORY(FAQ_CATE_NAME ) values(#{unreg})
+	</insert>
+	
+	<insert id="addTempFaq">
+		insert into TEMP_CATEGORY(CATEGORY_TYPE, CATEGORY_NAME) values( 'FAQ' ,#{cateName})
+	</insert>
+	
+	<select id="selectCate" resultType="com.admin.domain.QnaVO">
+		select qna_cate_num, qna_cate_name from qna_category
+	</select>
+	
+	<select id="selectTempCate" resultType="com.admin.domain.QnaTempVO">
+		select category_num, category_type, category_name from temp_category where category_type = 'QNA'
+	</select>
+	
+	<select id="selectCateFaq" resultType="com.admin.domain.FaqVO">
+		select faq_cate_num, faq_cate_name from faq_category
+	</select>
+	
+	<select id="selectTempCateFaq" resultType="com.admin.domain.FaqTempVO">
+		select category_num, category_type, category_name from temp_category where category_type = 'FAQ'
+	</select>
+	
+	<delete id="deleteQna">
+		delete from QNA_CATEGORY where qna_cate_num = #{idx}
+	</delete>
+	
+	<delete id="deleteTempQna">
+		delete from TEMP_CATEGORY where CATEGORY_NUM = #{idx}
+	</delete>
+	
+	<delete id="deleteQnaList">
+		delete from qna_board where category = #{cateName}
+	</delete>
+	
+	<delete id="deleteFaq">
+		delete from FAQ_CATEGORY where faq_cate_num = #{idx}
+	</delete>
+	
+	<delete id="deleteTempFaq">
+		delete from TEMP_CATEGORY where CATEGORY_NUM = #{idx}
+	</delete>
+	
+	<delete id="deleteFaqList">
+		delete from faq_board where category = #{cateName}
+	</delete>
+	
+	<insert id="addOrder">
+		insert into prod_order(mem_id, delivery_addr, receiver_name, receiver_tel, prod_num)
+		values(#{mem_id}, #{delivery_addr}, #{receiver_name}, #{receiver_tel}, #{prod_num})
+	</insert>
+
+</mapper>

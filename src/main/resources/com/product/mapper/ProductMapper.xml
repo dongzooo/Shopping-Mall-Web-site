@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.product.mapper.ProductMapper">
+
+	<insert id="RegisProd">
+		insert into product(category_code, prod_name, prod_price, prod_stock, prdo_desc, prod_sale_status, prod_seller)
+			values(#{category_code}, #{prod_name}, #{prod_price}, #{prod_stock}, #{prod_desc}, 1, #{prod_seller})
+	</insert>
+	
+	<select id="getNumofProd" resultType="int">
+		select MAX(prod_num) from product
+	</select>
+	
+	<insert id="SaveImg">
+		insert into prod_img_file(prod_num, img_file_name, img_file_addr, img_is_thumbnail)
+			values(#{prod_num}, #{img_file_name}, #{img_file_addr}, #{img_is_thumbnail})
+	</insert>
+	
+	<insert id="reg_review">
+		insert into prod_review(prod_num, mem_id, title, content, rating)
+			values(#{prod_num}, #{mem_id}, #{title}, #{content}, #{rating})
+	</insert>
+	
+	<select id="getNumOfReview" resultType="int">
+		select MAX(review_num) from prod_review
+	</select>
+	
+	<insert id="regRevImg">
+		insert into review_img_file(review_num, img_file_name, img_file_addr)
+			values(#{review_num}, #{img_file_name}, #{img_file_addr})
+	</insert>
+	
+	<select id="getCountOfReview" resultType="String">
+		select count(*) from prod_review where prod_num = #{prodNum}
+	</select>
+	
+	<select id="getListOfReview" resultType="com.product.domain.ProdReviewVO">
+		<![CDATA[
+			select review_num, prod_num, mem_id, title, content, rating, update_date
+			from (select rownum r, review_num, prod_num, mem_id, title, content, rating, update_date
+				  from prod_review
+				  where prod_num = #{prodNum}
+				  order by review_num desc) a,
+				 (select max(r) m
+				  from(select rownum r, review_num, prod_num, title, content, rating, update_date
+					   from prod_review
+					   where prod_num = #{prodNum}
+					   order by review_num desc)) b
+			where r >= ((#{page}*3)-2) and r <= #{page}*3
+		]]>
+	</select>
+	
+	<select id="getImgOfReview" resultType="com.product.domain.ReviewImgVO">
+		select img_file_name, img_file_addr
+		from review_img_file
+		where review_num = #{reviewNum}
+	</select>
+	
+	<select id="imgCheck" resultType="int">
+		select count(*) from review_img_file
+		where review_num = #{review_num}
+	</select>
+	
+	<update id="updateImg">
+		update review_img_file set img_file_name = #{img_file_name}, img_file_addr = #{img_file_addr}
+		where review_num = #{review_num}
+	</update>
+	
+	<select id="revCheck" resultType="int">
+		select count(*) from prod_review
+		where review_num = #{review_num}
+	</select>
+	
+	<update id="updateRev">
+		update prod_review set title=#{title}, content=#{content}, rating=#{rating}, update_date=sysdate
+		where review_num = #{review_num}
+	</update>
+	
+	<delete id="removeReview">
+		delete from prod_review where review_num = #{review_num}
+	</delete>
+	
+	<select id="productListOfCategory" resultType="com.product.domain.ProductVO">
+		<![CDATA[
+			select *
+			from (select rownum r, prod_num, category_code, prod_name, prod_price, prod_stock, prdo_desc
+					from product
+					where category_code = #{category}
+					order by prod_num desc) a,
+					(select max(r) m
+					 from(select rownum r, prod_num, category_code, prod_name, prod_price, prod_stock, prdo_desc
+						   from product
+						   where category_code = #{category}
+						   order by prod_num desc)) b
+			where r >= ((#{page}*12)-11) and r <= #{page}*12
+			]]>
+	</select>
+	
+	<select id="ThumbnailGetter" resultType="com.product.domain.Product_ImgVO">
+		select * from prod_img_file where prod_num = #{prod_num} and img_is_thumbnail = 'y'
+	</select>
+	
+	<select id="getProdImg" resultType="com.product.domain.Product_ImgVO">
+		select * from prod_img_file where prod_num = #{prod_num}
+	</select>
+	
+	<select id="CountTotPage" resultType="int">
+		select count(*) from product where category_code = #{category}
+	</select>
+	
+	<select id="getProdInfo" resultType="com.product.domain.ProductVO">
+		select * from product where prod_num=#{prod_num}
+	</select>
+
+</mapper>
